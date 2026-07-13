@@ -1,0 +1,37 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<PageLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section class="hero">
+		<h1>Ben Verhoeven</h1>
+		<p class="tagline">Theatre maker, improviser, and science communicator, based in Antwerp.</p>
+		<p>
+			I spend my time on stage in two different ways: improvising theatre, and helping scientists
+			turn their research into something an audience actually wants to sit through. Both, it turns
+			out, come down to the same skill — paying close attention to how people communicate.
+		</p>
+	</section>
+
+	<ul class="card-grid">
+		<li>
+			<a class="card" href="/about">
+				<h3>About</h3>
+				<p>PhD linguist turned improviser and science communicator — how that happened.</p>
+			</a>
+		</li>
+		<li>
+			<a class="card" href="/work">
+				<h3>Work</h3>
+				<p>Improv theatre, science communication with ERLNMYR, and teaching.</p>
+			</a>
+		</li>
+		<li>
+			<a class="card" href="/blog">
+				<h3>Blog</h3>
+				<p>Writing and the odd thought that doesn't fit anywhere else.</p>
+			</a>
+		</li>
+	</ul>
+</PageLayout>

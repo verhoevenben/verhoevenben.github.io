@@ -1,0 +1,96 @@
+---
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/work">Work</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/contact">Contact</HeaderLink>
+		</div>
+		<div class="social-links">
+			<a href="https://www.linkedin.com/in/verhoevenben/" target="_blank" rel="noopener noreferrer">
+				<span class="sr-only">Ben Verhoeven on LinkedIn</span>
+				<svg viewBox="0 0 16 16" aria-hidden="true" width="28" height="28"
+					><path
+						fill="currentColor"
+						d="M14.816 0H1.18C.528 0 0 .513 0 1.146v13.706C0 15.485.528 16 1.18 16h13.635c.652 0 1.185-.515 1.185-1.147V1.146C16 .513 15.468 0 14.816 0zM4.744 13.63H2.372V5.996h2.372v7.634zM3.558 4.955c-.762 0-1.376-.617-1.376-1.375 0-.758.614-1.375 1.376-1.375.758 0 1.375.617 1.375 1.375 0 .758-.617 1.375-1.375 1.375zM13.63 13.63h-2.368V9.917c0-.886-.017-2.027-1.236-2.027-1.236 0-1.425.966-1.425 1.964v3.776H6.234V5.996h2.274v1.043h.031c.316-.601 1.09-1.235 2.246-1.235 2.402 0 2.845 1.581 2.845 3.637v4.189z"
+					></path></svg
+				>
+			</a>
+			<a href="https://www.instagram.com/_erlnmyr/" target="_blank" rel="noopener noreferrer">
+				<span class="sr-only">ERLNMYR on Instagram</span>
+				<svg viewBox="0 0 16 16" aria-hidden="true" width="28" height="28"
+					><path
+						fill="currentColor"
+						d="M8 1.442c2.136 0 2.389.008 3.233.047.78.035 1.203.166 1.485.276.373.145.64.318.92.598.28.28.453.546.598.92.11.281.24.704.276 1.484.039.844.047 1.097.047 3.233s-.008 2.389-.047 3.233c-.035.78-.166 1.203-.276 1.485a2.473 2.473 0 0 1-.598.92c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.844.039-1.097.047-3.233.047s-2.389-.008-3.233-.047c-.78-.035-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.478 2.478 0 0 1-.598-.92c-.11-.282-.24-.705-.276-1.485-.039-.844-.047-1.097-.047-3.233s.008-2.389.047-3.233c.035-.78.166-1.203.276-1.485.145-.373.318-.64.598-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.844-.039 1.097-.047 3.233-.047zM8 0C5.827 0 5.555.01 4.702.048c-.852.04-1.433.174-1.942.372a3.916 3.916 0 0 0-1.417.923A3.916 3.916 0 0 0 .42 2.76C.222 3.27.087 3.85.048 4.702.01 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.445.445.89.719 1.417.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372a3.916 3.916 0 0 0 1.417-.923c.445-.445.719-.891.923-1.417.198-.51.333-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942a3.916 3.916 0 0 0-.923-1.417A3.916 3.916 0 0 0 13.24.42c-.51-.198-1.09-.333-1.942-.372C10.445.01 10.173 0 8 0zm0 3.892a4.108 4.108 0 1 0 0 8.216 4.108 4.108 0 0 0 0-8.216zm0 6.775a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334zm5.23-6.937a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0z"
+					></path></svg
+				>
+			</a>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: rgb(var(--bg));
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+		color: rgb(var(--black));
+	}
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5em 1em;
+		padding: 0.5em 0;
+	}
+	nav a {
+		padding: 0.75em 0.5em;
+		color: rgb(var(--black));
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.internal-links {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+	.social-links {
+		gap: 0.5em;
+		color: rgb(var(--gray));
+	}
+	@media (max-width: 480px) {
+		nav {
+			justify-content: center;
+			text-align: center;
+		}
+		.social-links {
+			order: 3;
+			width: 100%;
+			justify-content: center;
+		}
+	}
+</style>
