@@ -9,15 +9,6 @@ export interface PortfolioItem {
 	hue: number;
 }
 
-export interface NewsItem {
-	date: string;
-	title: string;
-	desc: string;
-	url: string;
-	photoLabel: string;
-	hue: number;
-}
-
 export interface Highlight {
 	stat: string;
 	desc: string;
@@ -43,7 +34,6 @@ export interface Copy {
 	highlightsHeading: string;
 	highlights: Highlight[];
 	newsHeading: string;
-	newsItems: NewsItem[];
 	contact: { heading: string; text: string };
 	training: {
 		kicker: string;
@@ -134,32 +124,6 @@ export const copy: { nl: Copy; en: Copy } = {
 			{ stat: '250+', desc: 'Voorstellingen gespeeld in 10 landen' },
 		],
 		newsHeading: 'Nieuws',
-		newsItems: [
-			{
-				date: 'Maart 2026',
-				title: '"Waar is de Waarheid" wint dubbele Berrie Heesenprijs',
-				desc: 'Met Tine Van den Broeck (Odisee) haalde Ben zowel de vakjury- als de kinderjuryprijs voor kinderfilosofie binnen op de Dag van de Kinderfilosofie in Den Bosch.',
-				url: 'https://www.erlnmyr.be/2026/03/15/waar-is-de-waarheid-wint-dubbele-berrie-heesenprijs-voor-kinderfilosofie/',
-				photoLabel: '[ foto: prijsuitreiking Den Bosch ]',
-				hue: 35,
-			},
-			{
-				date: 'September 2025',
-				title: 'Try-out: Lang Zullen We Leven',
-				desc: 'Gratis try-out van de nieuwste ERLNMYR-voorstelling, gemaakt in samenwerking met imec, over de impact van chiptechnologie op onze gezondheid.',
-				url: 'https://www.erlnmyr.be/2025/09/19/try-out-lang-zullen-we-leven/',
-				photoLabel: '[ foto: try-out Lang Zullen We Leven ]',
-				hue: 190,
-			},
-			{
-				date: 'April 2022',
-				title: 'Impro en Wetenschap — een teaser',
-				desc: 'Een teaser van het hoofdstuk "Improvisation and the Scientific Method", geschreven samen met Gael Doorneweerd-Perry voor het boek Essays on Improv.',
-				url: 'https://www.erlnmyr.be/2022/04/22/impro-en-wetenschap-een-teaser/',
-				photoLabel: '[ foto: Impro en Wetenschap ]',
-				hue: 90,
-			},
-		],
 		contact: {
 			heading: 'Laten we praten',
 			text: 'Op zoek naar een spreker, trainer of theatermaker? Stuur gerust een bericht.',
@@ -281,32 +245,6 @@ export const copy: { nl: Copy; en: Copy } = {
 			{ stat: '250+', desc: 'Shows performed across 10 countries' },
 		],
 		newsHeading: 'News',
-		newsItems: [
-			{
-				date: 'March 2026',
-				title: '"Waar is de Waarheid" wins double Berrie Heesenprijs',
-				desc: "With Tine Van den Broeck (Odisee), Ben won both the jury and children's jury prize for children's philosophy at the Day of Children's Philosophy in Den Bosch.",
-				url: 'https://www.erlnmyr.be/2026/03/15/waar-is-de-waarheid-wint-dubbele-berrie-heesenprijs-voor-kinderfilosofie/',
-				photoLabel: '[ photo: award ceremony Den Bosch ]',
-				hue: 35,
-			},
-			{
-				date: 'September 2025',
-				title: 'Try-out: Lang Zullen We Leven',
-				desc: 'Free try-out of the newest ERLNMYR show, made together with imec, about the impact of chip technology on our health.',
-				url: 'https://www.erlnmyr.be/2025/09/19/try-out-lang-zullen-we-leven/',
-				photoLabel: '[ photo: Lang Zullen We Leven try-out ]',
-				hue: 190,
-			},
-			{
-				date: 'April 2022',
-				title: 'Improv and Science — a teaser',
-				desc: 'A teaser of the chapter "Improvisation and the Scientific Method", co-written with Gael Doorneweerd-Perry for the book Essays on Improv.',
-				url: 'https://www.erlnmyr.be/2022/04/22/impro-en-wetenschap-een-teaser/',
-				photoLabel: '[ photo: Improv and Science ]',
-				hue: 90,
-			},
-		],
 		contact: {
 			heading: "Let's talk",
 			text: 'Looking for a speaker, trainer or theatre maker? Feel free to reach out.',

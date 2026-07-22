@@ -9,6 +9,6 @@ booking details. This site is the smaller, slower space next to it: a place for 
 notes on improv and science communication that don't fit into a pitch deck, and for whatever else
 comes up.
 
-I'll be adding to the [about](/about) and [work](/work) pages as things change, and posting here
+I'll be adding to the [training & coaching](/training) page as things change, and posting here
 whenever there's something worth writing down. If you're after a show or a workshop, ERLNMYR is
 still the right door to knock on.
