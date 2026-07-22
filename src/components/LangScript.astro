@@ -1,0 +1,26 @@
+---
+---
+
+<script is:inline>
+	(function () {
+		function detect() {
+			try {
+				var saved = localStorage.getItem('lang');
+				if (saved === 'nl' || saved === 'en') return saved;
+			} catch (e) {}
+			var nav = (navigator.language || 'nl').toLowerCase();
+			return nav.startsWith('nl') ? 'nl' : 'en';
+		}
+		var lang = detect();
+		document.documentElement.setAttribute('data-lang', lang);
+		document.documentElement.setAttribute('lang', lang);
+
+		window.setLang = function (lang) {
+			document.documentElement.setAttribute('data-lang', lang);
+			document.documentElement.setAttribute('lang', lang);
+			try {
+				localStorage.setItem('lang', lang);
+			} catch (e) {}
+		};
+	})();
+</script>

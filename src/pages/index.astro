@@ -1,37 +1,194 @@
 ---
+import { Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { copy } from '../i18n/copy';
+import heroPhoto from '../assets/BenVerhoeven-By-Fredography-Full-73.jpg';
+import coachingPhoto from '../assets/COACHING_BEN_005.jpg';
+import presentingPhoto from '../assets/231214-KULeuven-3MT-008.jpg';
+import theatrePhoto from '../assets/koninkrijk deer weetgierigen_maruszak.photo_S-36.JPG';
+import improvPhoto from '../assets/2023-12-17 Kemphanen 2023 Finale 675.jpg';
+
+const { nl, en } = copy;
+
+const portfolioPhotos = [theatrePhoto, coachingPhoto, presentingPhoto, improvPhoto, null];
+
+function stripeStyle(hue: number) {
+	return `background-image: repeating-linear-gradient(135deg, oklch(88% 0.05 ${hue}) 0, oklch(88% 0.05 ${hue}) 14px, oklch(93% 0.03 ${hue}) 14px, oklch(93% 0.03 ${hue}) 28px);`;
+}
+
+function newsStripeStyle(hue: number) {
+	return `background-image: repeating-linear-gradient(135deg, oklch(90% 0.03 ${hue}) 0, oklch(90% 0.03 ${hue}) 14px, oklch(94% 0.01 240) 14px, oklch(94% 0.01 240) 28px);`;
+}
 ---
 
 <PageLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<section class="hero">
-		<h1>Ben Verhoeven</h1>
-		<p class="tagline">Theatre maker, improviser, and science communicator, based in Antwerp.</p>
-		<p>
-			I spend my time on stage in two different ways: improvising theatre, and helping scientists
-			turn their research into something an audience actually wants to sit through. Both, it turns
-			out, come down to the same skill — paying close attention to how people communicate.
-		</p>
-	</section>
+	<!-- HERO -->
+	<div class="hero">
+		<div>
+			<div class="hero-kicker">
+				<span class="lang-nl">{nl.hero.kicker}</span><span class="lang-en">{en.hero.kicker}</span>
+			</div>
+			<h1 class="hero-title">{nl.hero.title}</h1>
+			<p class="hero-sub">
+				<span class="lang-nl">{nl.hero.sub}</span><span class="lang-en">{en.hero.sub}</span>
+			</p>
+			<div class="hero-cta-row">
+				<a href="/training" class="btn btn-primary">
+					<span class="lang-nl">{nl.hero.ctaTraining}</span><span class="lang-en"
+						>{en.hero.ctaTraining}</span
+					>
+				</a>
+				<a href="#contact" class="btn btn-outline">
+					<span class="lang-nl">{nl.hero.ctaContact}</span><span class="lang-en"
+						>{en.hero.ctaContact}</span
+					>
+				</a>
+			</div>
+		</div>
+		<div class="hero-photo">
+			<Image src={heroPhoto} alt="Ben Verhoeven" width={800} />
+		</div>
+	</div>
 
-	<ul class="card-grid">
-		<li>
-			<a class="card" href="/about">
-				<h3>About</h3>
-				<p>PhD linguist turned improviser and science communicator — how that happened.</p>
-			</a>
-		</li>
-		<li>
-			<a class="card" href="/work">
-				<h3>Work</h3>
-				<p>Improv theatre, science communication with ERLNMYR, and teaching.</p>
-			</a>
-		</li>
-		<li>
-			<a class="card" href="/blog">
-				<h3>Blog</h3>
-				<p>Writing and the odd thought that doesn't fit anywhere else.</p>
-			</a>
-		</li>
-	</ul>
+	<!-- PORTFOLIO GRID -->
+	<div class="section section-alt">
+		<div class="section-inner">
+			<h2 class="section-heading">
+				<span class="lang-nl">{nl.portfolioHeading}</span><span class="lang-en"
+					>{en.portfolioHeading}</span
+				>
+			</h2>
+			<div class="card-grid">
+				{
+					nl.portfolioItems.map((item, i) => {
+						const enItem = en.portfolioItems[i];
+						const photo = portfolioPhotos[i];
+						const Tag = item.href ? 'a' : 'div';
+						const linkProps = item.href
+							? item.external
+								? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
+								: { href: item.href }
+							: {};
+						return (
+							<Tag class="card" {...linkProps}>
+								<div class="card-image" style={photo ? undefined : stripeStyle(item.hue)}>
+									{photo && <Image src={photo} alt="" width={600} />}
+									{!photo && (
+										<span class="card-image-label">
+											<span class="lang-nl">{item.photoLabel}</span>
+											<span class="lang-en">{enItem.photoLabel}</span>
+										</span>
+									)}
+								</div>
+								<div class="card-body">
+									<div class="card-tag" style={`color: ${item.accent}`}>
+										<span class="lang-nl">{item.tag}</span>
+										<span class="lang-en">{enItem.tag}</span>
+									</div>
+									<div class="card-title">
+										<span class="lang-nl">{item.title}</span>
+										<span class="lang-en">{enItem.title}</span>
+									</div>
+									<div class="card-desc">
+										<span class="lang-nl">{item.desc}</span>
+										<span class="lang-en">{enItem.desc}</span>
+									</div>
+								</div>
+							</Tag>
+						);
+					})
+				}
+			</div>
+		</div>
+	</div>
+
+	<!-- HIGHLIGHTS -->
+	<div class="section">
+		<div class="section-inner">
+			<h2 class="section-heading">
+				<span class="lang-nl">{nl.highlightsHeading}</span><span class="lang-en"
+					>{en.highlightsHeading}</span
+				>
+			</h2>
+			<div class="highlights-grid">
+				{
+					nl.highlights.map((h, i) => {
+						const enH = en.highlights[i];
+						return (
+							<div class="highlight-card">
+								<div class="highlight-stat">
+									<span class="lang-nl">{h.stat}</span>
+									<span class="lang-en">{enH.stat}</span>
+								</div>
+								<div class="highlight-desc">
+									<span class="lang-nl">{h.desc}</span>
+									<span class="lang-en">{enH.desc}</span>
+								</div>
+							</div>
+						);
+					})
+				}
+			</div>
+		</div>
+	</div>
+
+	<!-- NEWS -->
+	<div class="section">
+		<div class="section-inner">
+			<h2 class="section-heading">
+				<span class="lang-nl">{nl.newsHeading}</span><span class="lang-en">{en.newsHeading}</span>
+			</h2>
+			<div class="card-grid">
+				{
+					nl.newsItems.map((n, i) => {
+						const enN = en.newsItems[i];
+						return (
+							<a href={n.url} target="_blank" rel="noopener noreferrer" class="card">
+								<div class="card-image" style={newsStripeStyle(n.hue)}>
+									<span class="card-image-label">
+										<span class="lang-nl">{n.photoLabel}</span>
+										<span class="lang-en">{enN.photoLabel}</span>
+									</span>
+								</div>
+								<div class="card-body">
+									<div class="card-date">
+										<span class="lang-nl">{n.date}</span>
+										<span class="lang-en">{enN.date}</span>
+									</div>
+									<div class="card-title">
+										<span class="lang-nl">{n.title} ↗</span>
+										<span class="lang-en">{enN.title} ↗</span>
+									</div>
+									<div class="card-desc">
+										<span class="lang-nl">{n.desc}</span>
+										<span class="lang-en">{enN.desc}</span>
+									</div>
+								</div>
+							</a>
+						);
+					})
+				}
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTACT -->
+	<div id="contact" class="dark-section">
+		<div class="dark-section-inner">
+			<h2>
+				<span class="lang-nl">{nl.contact.heading}</span><span class="lang-en"
+					>{en.contact.heading}</span
+				>
+			</h2>
+			<p>
+				<span class="lang-nl">{nl.contact.text}</span><span class="lang-en">{en.contact.text}</span
+				>
+			</p>
+			<div class="dark-links">
+				<a href="mailto:ben@erlnmyr.be">ben@erlnmyr.be</a>
+				<a href="tel:+32497552165">+32 497 55 21 65</a>
+			</div>
+		</div>
+	</div>
 </PageLayout>

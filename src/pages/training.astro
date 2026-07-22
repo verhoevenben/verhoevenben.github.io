@@ -1,0 +1,95 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { copy } from '../i18n/copy';
+
+const { nl, en } = copy;
+---
+
+<PageLayout
+	title="Training & Coaching — Ben Verhoeven"
+	description="Training and coaching in science communication: storytelling, stage presence, and personal coaching through improvisational theatre."
+>
+	<!-- TRAINING HERO -->
+	<div class="training-hero">
+		<div class="hero-kicker">
+			<span class="lang-nl">{nl.training.kicker}</span><span class="lang-en"
+				>{en.training.kicker}</span
+			>
+		</div>
+		<h1>
+			<span class="lang-nl">{nl.training.title}</span><span class="lang-en"
+				>{en.training.title}</span
+			>
+		</h1>
+		<p>
+			<span class="lang-nl">{nl.training.intro}</span><span class="lang-en"
+				>{en.training.intro}</span
+			>
+		</p>
+	</div>
+
+	<!-- OFFERINGS -->
+	<div class="section section-alt">
+		<div class="section-inner narrow">
+			<h2 class="section-heading">
+				<span class="lang-nl">{nl.training.offeringsHeading}</span><span class="lang-en"
+					>{en.training.offeringsHeading}</span
+				>
+			</h2>
+			<div class="offerings-grid">
+				{
+					nl.training.offerings.map((o, i) => {
+						const enO = en.training.offerings[i];
+						return (
+							<div class="offering-card" style={`border-left-color: ${o.accent}`}>
+								<h3>
+									<span class="lang-nl">{o.title}</span>
+									<span class="lang-en">{enO.title}</span>
+								</h3>
+								<p>
+									<span class="lang-nl">{o.desc}</span>
+									<span class="lang-en">{enO.desc}</span>
+								</p>
+							</div>
+						);
+					})
+				}
+			</div>
+		</div>
+	</div>
+
+	<!-- TESTIMONIAL -->
+	<div class="testimonial">
+		<blockquote>
+			<span class="lang-nl">{nl.training.testimonial.quote}</span><span class="lang-en"
+				>{en.training.testimonial.quote}</span
+			>
+		</blockquote>
+		<cite>
+			<span class="lang-nl">{nl.training.testimonial.source}</span><span class="lang-en"
+				>{en.training.testimonial.source}</span
+			>
+		</cite>
+	</div>
+
+	<!-- CTA -->
+	<div class="dark-section">
+		<div class="dark-section-inner">
+			<h2>
+				<span class="lang-nl">{nl.training.ctaHeading}</span><span class="lang-en"
+					>{en.training.ctaHeading}</span
+				>
+			</h2>
+			<p>
+				<span class="lang-nl">{nl.training.ctaText}</span><span class="lang-en"
+					>{en.training.ctaText}</span
+				>
+			</p>
+			<a href="mailto:ben@erlnmyr.be" class="dark-cta-btn">
+				<span class="lang-nl">{nl.training.ctaButton}</span><span class="lang-en"
+					>{en.training.ctaButton}</span
+				>
+			</a>
+		</div>
+	</div>
+</PageLayout>
