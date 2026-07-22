@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { copy } from '../i18n/copy';
@@ -12,6 +13,11 @@ import improvPhoto from '../assets/2023-12-17 Kemphanen 2023 Finale 675.jpg';
 const { nl, en } = copy;
 
 const portfolioPhotos = [theatrePhoto, coachingPhoto, presentingPhoto, improvPhoto, null];
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const newsHues = [35, 190, 90, 340, 250, 10, 160, 280, 60, 220, 300];
 
 function stripeStyle(hue: number) {
 	return `background-image: repeating-linear-gradient(135deg, oklch(88% 0.05 ${hue}) 0, oklch(88% 0.05 ${hue}) 14px, oklch(93% 0.03 ${hue}) 14px, oklch(93% 0.03 ${hue}) 28px);`;
@@ -139,35 +145,19 @@ function newsStripeStyle(hue: number) {
 			<h2 class="section-heading">
 				<span class="lang-nl">{nl.newsHeading}</span><span class="lang-en">{en.newsHeading}</span>
 			</h2>
-			<div class="card-grid">
+			<div class="news-grid">
 				{
-					nl.newsItems.map((n, i) => {
-						const enN = en.newsItems[i];
-						return (
-							<a href={n.url} target="_blank" rel="noopener noreferrer" class="card">
-								<div class="card-image" style={newsStripeStyle(n.hue)}>
-									<span class="card-image-label">
-										<span class="lang-nl">{n.photoLabel}</span>
-										<span class="lang-en">{enN.photoLabel}</span>
-									</span>
-								</div>
-								<div class="card-body">
-									<div class="card-date">
-										<span class="lang-nl">{n.date}</span>
-										<span class="lang-en">{enN.date}</span>
-									</div>
-									<div class="card-title">
-										<span class="lang-nl">{n.title} ↗</span>
-										<span class="lang-en">{enN.title} ↗</span>
-									</div>
-									<div class="card-desc">
-										<span class="lang-nl">{n.desc}</span>
-										<span class="lang-en">{enN.desc}</span>
-									</div>
-								</div>
-							</a>
-						);
-					})
+					posts.map((post, i) => (
+						<a href={`/blog/${post.id}/`} class="news-tile" aria-label={post.data.title}>
+							<div
+								class="news-tile-photo"
+								style={post.data.heroImage ? undefined : newsStripeStyle(newsHues[i % newsHues.length])}
+							>
+								{post.data.heroImage && <Image src={post.data.heroImage} alt="" width={400} />}
+							</div>
+							<div class="news-tile-title">{post.data.title}</div>
+						</a>
+					))
 				}
 			</div>
 		</div>
