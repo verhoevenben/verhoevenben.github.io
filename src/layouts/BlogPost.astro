@@ -15,7 +15,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="nl" data-lang="nl">
 	<head>
 		<LangScript />
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title.nl} description={description.nl} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -71,12 +71,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										<span class="lang-nl">Laatst bijgewerkt op</span>
+										<span class="lang-en">Last updated on</span> <FormattedDate date={updatedDate} />
 									</div>
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+						<h1>
+							<span class="lang-nl">{title.nl}</span><span class="lang-en">{title.en}</span>
+						</h1>
 						<hr />
 					</div>
 					<slot />

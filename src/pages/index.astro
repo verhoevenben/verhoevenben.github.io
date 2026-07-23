@@ -9,14 +9,15 @@ import coachingPhoto from '../assets/COACHING_BEN_005.jpg';
 import presentingPhoto from '../assets/231214-KULeuven-3MT-008.jpg';
 import theatrePhoto from '../assets/koninkrijk deer weetgierigen_maruszak.photo_S-36.JPG';
 import improvPhoto from '../assets/2023-12-17 Kemphanen 2023 Finale 675.jpg';
+import teachingPhoto from '../assets/_MG_6901.jpg';
 
 const { nl, en } = copy;
 
-const portfolioPhotos = [theatrePhoto, coachingPhoto, presentingPhoto, improvPhoto, null];
+const portfolioPhotos = [theatrePhoto, coachingPhoto, presentingPhoto, improvPhoto, teachingPhoto];
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 10);
 const newsHues = [35, 190, 90, 340, 250, 10, 160, 280, 60, 220, 300];
 
 function stripeStyle(hue: number) {
@@ -109,36 +110,6 @@ function newsStripeStyle(hue: number) {
 		</div>
 	</div>
 
-	<!-- HIGHLIGHTS -->
-	<div class="section">
-		<div class="section-inner">
-			<h2 class="section-heading">
-				<span class="lang-nl">{nl.highlightsHeading}</span><span class="lang-en"
-					>{en.highlightsHeading}</span
-				>
-			</h2>
-			<div class="highlights-grid">
-				{
-					nl.highlights.map((h, i) => {
-						const enH = en.highlights[i];
-						return (
-							<div class="highlight-card">
-								<div class="highlight-stat">
-									<span class="lang-nl">{h.stat}</span>
-									<span class="lang-en">{enH.stat}</span>
-								</div>
-								<div class="highlight-desc">
-									<span class="lang-nl">{h.desc}</span>
-									<span class="lang-en">{enH.desc}</span>
-								</div>
-							</div>
-						);
-					})
-				}
-			</div>
-		</div>
-	</div>
-
 	<!-- NEWS -->
 	<div class="section">
 		<div class="section-inner">
@@ -148,17 +119,27 @@ function newsStripeStyle(hue: number) {
 			<div class="news-grid">
 				{
 					posts.map((post, i) => (
-						<a href={`/blog/${post.id}/`} class="news-tile" aria-label={post.data.title}>
+						<a href={`/blog/${post.id}/`} class="news-tile" aria-label={post.data.title.nl}>
 							<div
 								class="news-tile-photo"
 								style={post.data.heroImage ? undefined : newsStripeStyle(newsHues[i % newsHues.length])}
 							>
 								{post.data.heroImage && <Image src={post.data.heroImage} alt="" width={400} />}
 							</div>
-							<div class="news-tile-title">{post.data.title}</div>
+							<div class="news-tile-title">
+								<span class="lang-nl">{post.data.title.nl}</span>
+								<span class="lang-en">{post.data.title.en}</span>
+							</div>
 						</a>
 					))
 				}
+			</div>
+			<div class="news-more">
+				<a href="/blog" class="btn btn-outline">
+					<span class="lang-nl">{nl.newsMoreButton}</span><span class="lang-en"
+						>{en.newsMoreButton}</span
+					>
+				</a>
 			</div>
 		</div>
 	</div>

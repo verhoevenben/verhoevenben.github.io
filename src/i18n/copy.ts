@@ -9,11 +9,6 @@ export interface PortfolioItem {
 	hue: number;
 }
 
-export interface Highlight {
-	stat: string;
-	desc: string;
-}
-
 export interface Offering {
 	title: string;
 	desc: string;
@@ -31,9 +26,8 @@ export interface Copy {
 	};
 	portfolioHeading: string;
 	portfolioItems: PortfolioItem[];
-	highlightsHeading: string;
-	highlights: Highlight[];
 	newsHeading: string;
+	newsMoreButton: string;
 	contact: { heading: string; text: string };
 	training: {
 		kicker: string;
@@ -112,18 +106,8 @@ export const copy: { nl: Copy; en: Copy } = {
 				hue: 250,
 			},
 		],
-		highlightsHeading: 'Erkenning & hoogtepunten',
-		highlights: [
-			{ stat: '2017', desc: 'KVAB Jaarprijs Wetenschapscommunicatie' },
-			{ stat: '2018', desc: 'Doctor in de computertaalkunde, UAntwerpen' },
-			{
-				stat: '3x',
-				desc: 'Kemphanen-winnaar: 2017 met Commotie (Gezongen Gezegdes), 2019 met Prism (De juiste keuze), 2023 met Commotie (Chaos in fa kruis)',
-			},
-			{ stat: 'Brons', desc: 'EK Improvisatietheater 2024, met Team Belgium' },
-			{ stat: '250+', desc: 'Voorstellingen gespeeld in 10 landen' },
-		],
-		newsHeading: 'Nieuws',
+		newsHeading: 'Updates',
+		newsMoreButton: 'Bekijk alle berichten',
 		contact: {
 			heading: 'Laten we praten',
 			text: 'Op zoek naar een spreker, trainer of theatermaker? Stuur gerust een bericht.',
@@ -233,18 +217,8 @@ export const copy: { nl: Copy; en: Copy } = {
 				hue: 250,
 			},
 		],
-		highlightsHeading: 'Recognition & highlights',
-		highlights: [
-			{ stat: '2017', desc: 'KVAB Annual Science Communication Prize' },
-			{ stat: '2018', desc: 'Doctor in computational linguistics, University of Antwerp' },
-			{
-				stat: '3x',
-				desc: 'Winner of Kemphanen: 2017 with Commotie (Gezongen Gezegdes), 2019 with Prism (De juiste keuze), 2023 with Commotie (Chaos in fa kruis)',
-			},
-			{ stat: 'Bronze', desc: '2024 European Improv Championships, with Team Belgium' },
-			{ stat: '250+', desc: 'Shows performed across 10 countries' },
-		],
-		newsHeading: 'News',
+		newsHeading: 'Updates',
+		newsMoreButton: 'View all posts',
 		contact: {
 			heading: "Let's talk",
 			text: 'Looking for a speaker, trainer or theatre maker? Feel free to reach out.',
