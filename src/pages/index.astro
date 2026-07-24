@@ -119,7 +119,7 @@ function newsStripeStyle(hue: number) {
 			<div class="news-grid">
 				{
 					posts.map((post, i) => (
-						<a href={`/blog/${post.id}/`} class="news-tile" aria-label={post.data.title.nl}>
+						<a href={`/updates/${post.id}/`} class="news-tile" aria-label={post.data.title.nl}>
 							<div
 								class="news-tile-photo"
 								style={post.data.heroImage ? undefined : newsStripeStyle(newsHues[i % newsHues.length])}
@@ -135,7 +135,7 @@ function newsStripeStyle(hue: number) {
 				}
 			</div>
 			<div class="news-more">
-				<a href="/blog" class="btn btn-outline">
+				<a href="/updates" class="btn btn-outline">
 					<span class="lang-nl">{nl.newsMoreButton}</span><span class="lang-en"
 						>{en.newsMoreButton}</span
 					>

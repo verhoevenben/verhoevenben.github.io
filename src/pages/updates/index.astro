@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { copy } from '../../i18n/copy';
+
+const { nl, en } = copy;
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const newsHues = [35, 190, 90, 340, 250, 10, 160, 280, 60, 220, 300];
+
+function newsStripeStyle(hue: number) {
+	return `background-image: repeating-linear-gradient(135deg, oklch(90% 0.03 ${hue}) 0, oklch(90% 0.03 ${hue}) 14px, oklch(94% 0.01 240) 14px, oklch(94% 0.01 240) 28px);`;
+}
+---
+
+<PageLayout
+	title="Updates — Ben Verhoeven"
+	description="All updates and posts from Ben Verhoeven — shows, workshops, and everything else worth writing down."
+>
+	<div class="section">
+		<div class="section-inner">
+			<h1 class="section-heading">
+				<span class="lang-nl">{nl.newsHeading}</span><span class="lang-en">{en.newsHeading}</span>
+			</h1>
+			<div class="news-grid">
+				{
+					posts.map((post, i) => (
+						<a href={`/updates/${post.id}/`} class="news-tile" aria-label={post.data.title.nl}>
+							<div
+								class="news-tile-photo"
+								style={post.data.heroImage ? undefined : newsStripeStyle(newsHues[i % newsHues.length])}
+							>
+								{post.data.heroImage && <Image src={post.data.heroImage} alt="" width={400} />}
+							</div>
+							<div class="news-tile-title">
+								<span class="lang-nl">{post.data.title.nl}</span>
+								<span class="lang-en">{post.data.title.en}</span>
+							</div>
+							<div class="news-tile-date">
+								<FormattedDate date={post.data.pubDate} />
+							</div>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</PageLayout>

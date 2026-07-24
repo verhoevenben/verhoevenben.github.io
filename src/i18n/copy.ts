@@ -45,7 +45,7 @@ export interface Copy {
 
 export const copy: { nl: Copy; en: Copy } = {
 	nl: {
-		nav: { home: 'Home', training: 'Training & Coaching', blog: 'Blog' },
+		nav: { home: 'Home', training: 'Training & Coaching', blog: 'Updates' },
 		hero: {
 			kicker: 'Theatermaker · Wetenschapscommunicator · Trainer',
 			title: 'Ben Verhoeven',
@@ -156,7 +156,7 @@ export const copy: { nl: Copy; en: Copy } = {
 		footerNote: '© 2026 Ben Verhoeven — ERLNMYR',
 	},
 	en: {
-		nav: { home: 'Home', training: 'Training & Coaching', blog: 'Blog' },
+		nav: { home: 'Home', training: 'Training & Coaching', blog: 'Updates' },
 		hero: {
 			kicker: 'Theatre maker · Science communicator · Trainer',
 			title: 'Ben Verhoeven',

@@ -9,7 +9,7 @@ import LangScript from '../components/LangScript.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageCredit } = Astro.props;
 ---
 
 <html lang="nl" data-lang="nl">
@@ -54,6 +54,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.hero-image-credit {
+				margin: 0.5em 0 0;
+				text-align: center;
+				font-size: 0.8em;
+				color: var(--muted-2);
+			}
 		</style>
 	</head>
 
@@ -63,6 +69,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			<article>
 				<div class="hero-image">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && heroImageCredit && (
+						<p class="hero-image-credit">
+							<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>
+							{heroImageCredit}
+						</p>
+					)}
 				</div>
 				<div class="prose">
 					<div class="title">
