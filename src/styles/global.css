@@ -195,7 +195,6 @@ html[data-lang='en'] .lang-block-nl {
 }
 .logo {
 	font-family: var(--font-headline);
-	font-style: italic;
 	font-size: 26px;
 	letter-spacing: 0.5px;
 	color: var(--ink-strong);
