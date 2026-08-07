@@ -34,7 +34,22 @@ function newsStripeStyle(hue: number) {
 	<div class="hero">
 		<div>
 			<div class="hero-kicker">
-				<span class="lang-nl">{nl.hero.kicker}</span><span class="lang-en">{en.hero.kicker}</span>
+				<ul class="hero-kicker-list lang-block-nl">
+					{nl.hero.kickerItems.map((item, i) => (
+						<>
+							{i === 3 && <li class="kicker-break" aria-hidden="true" />}
+							<li>{item}</li>
+						</>
+					))}
+				</ul>
+				<ul class="hero-kicker-list lang-block-en">
+					{en.hero.kickerItems.map((item, i) => (
+						<>
+							{i === 3 && <li class="kicker-break" aria-hidden="true" />}
+							<li>{item}</li>
+						</>
+					))}
+				</ul>
 			</div>
 			<h1 class="hero-title">{nl.hero.title}</h1>
 			<p class="hero-sub">
@@ -55,6 +70,9 @@ function newsStripeStyle(hue: number) {
 		</div>
 		<div class="hero-photo">
 			<Image src={heroPhoto} alt="Ben Verhoeven" width={800} />
+			<p class="hero-photo-credit">
+				<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>Frédéric Paulussen
+			</p>
 		</div>
 	</div>
 

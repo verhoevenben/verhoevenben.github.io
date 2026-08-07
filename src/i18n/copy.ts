@@ -18,7 +18,7 @@ export interface Offering {
 export interface Copy {
 	nav: { home: string; training: string; blog: string };
 	hero: {
-		kicker: string;
+		kickerItems: string[];
 		title: string;
 		sub: string;
 		ctaTraining: string;
@@ -47,7 +47,7 @@ export const copy: { nl: Copy; en: Copy } = {
 	nl: {
 		nav: { home: 'Home', training: 'Training & Coaching', blog: 'Updates' },
 		hero: {
-			kicker: 'Theatermaker · Wetenschapscommunicator · Improvisator',
+			kickerItems: ['Theatermaker', 'Wetenschapscommunicator', 'Improvisator', 'Trainer', 'Presentator'],
 			title: 'Ben Verhoeven',
 			sub: 'Doctor in de taalkunde die wetenschap het podium op tilt. Ik combineer improvisatietheater en wetenschapscommunicatie — als maker, verteller, docent en coach.',
 			ctaTraining: 'Bekijk training & coaching',
@@ -56,7 +56,7 @@ export const copy: { nl: Copy; en: Copy } = {
 		portfolioHeading: 'Wat ik doe',
 		portfolioItems: [
 			{
-				tag: 'Theater',
+				tag: 'Wetenschapstheater',
 				title: 'Theatermaker',
 				desc: 'Ik maak en speel theater geïnspireerd door wetenschap als ERLNMYR. Bekijk het aanbod op erlnmyr.be ↗',
 				accent: 'oklch(55% 0.15 35)',
@@ -68,7 +68,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Wetenschapscommunicatie',
 				title: 'Trainer & coach',
-				desc: 'Ik begeleid onderzoekers en professionals in presenteren, storytelling, en podiumvaardigheden, en coach voor belangrijke presentaties.',
+				desc: 'Ik begeleid onderzoekers en professionals in presenteren, storytelling, en podiumvaardigheden, en coach hen voor belangrijke presentaties.',
 				accent: 'oklch(55% 0.15 190)',
 				href: '/training',
 				external: false,
@@ -86,9 +86,9 @@ export const copy: { nl: Copy; en: Copy } = {
 				hue: 90,
 			},
 			{
-				tag: 'Improvisatie',
-				title: 'Improvisatie-acteur',
-				desc: 'Ik speel al sinds 2011 improvisatietheater, o.a. bij Commotie, Prism, Before, Swaajp en Improbubble.',
+				tag: 'Improtheater',
+				title: 'Speler',
+				desc: 'Ik heb 15 jaar ervaring met improvisatietheater. Zo won ik 3 keer Kemphanen - de wedstrijd voor beste Vlaamse improvoorstelling - en behaalde brons voor België op het EK impro in 2024.',
 				accent: 'oklch(55% 0.15 340)',
 				href: null,
 				external: false,
@@ -96,9 +96,9 @@ export const copy: { nl: Copy; en: Copy } = {
 				hue: 340,
 			},
 			{
-				tag: 'Onderwijs',
-				title: 'Improvisatie-docent',
-				desc: 'Ik doceer bij Wisper, eerder aan Conservatorium Mechelen en de Swaajp School of Improv, en geef workshops op internationale festivals.',
+				tag: 'Improtheater',
+				title: 'Docent',
+				desc: 'Ik doceer impro bij Wisper, eerder aan Conservatorium Mechelen en de Swaajp School of Improv, en geef workshops op internationale festivals.',
 				accent: 'oklch(55% 0.15 250)',
 				href: null,
 				external: false,
@@ -158,7 +158,7 @@ export const copy: { nl: Copy; en: Copy } = {
 	en: {
 		nav: { home: 'Home', training: 'Training & Coaching', blog: 'Updates' },
 		hero: {
-			kicker: 'Theatre maker · Science communicator · Improviser',
+			kickerItems: ['Theatre maker', 'Science communicator', 'Improviser', 'Trainer', 'Speaker'],
 			title: 'Ben Verhoeven',
 			sub: 'A doctor in linguistics who puts science on stage. I blend improvisational theatre and science communication — as a performer, storyteller, teacher and coach.',
 			ctaTraining: 'See training & coaching',
@@ -167,11 +167,11 @@ export const copy: { nl: Copy; en: Copy } = {
 		portfolioHeading: 'What I do',
 		portfolioItems: [
 			{
-				tag: 'Theatre',
+				tag: 'Science theatre',
 				title: 'Theatre maker',
 				desc: 'I create and perform theatre inspired by science as ERLNMYR. See the full programme at erlnmyr.be ↗',
 				accent: 'oklch(55% 0.15 35)',
-				href: 'https://www.erlnmyr.be/voorstellingen',
+				href: 'https://www.erlnmyr.be/en/shows',
 				external: true,
 				photoLabel: '[ photo: on-stage performance ]',
 				hue: 35,
@@ -179,7 +179,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Science communication',
 				title: 'Trainer & coach',
-				desc: 'I guide researchers and professionals in presenting, storytelling, and stage skills, and coach for important presentations.',
+				desc: 'I guide researchers and professionals in presenting, storytelling, and stage skills, and coach them for important presentations.',
 				accent: 'oklch(55% 0.15 190)',
 				href: '/training',
 				external: false,
@@ -191,15 +191,15 @@ export const copy: { nl: Copy; en: Copy } = {
 				title: 'Speaker, moderator & host',
 				desc: 'I host events, moderate panels and debates, and get a message across clearly to any audience.',
 				accent: 'oklch(55% 0.15 90)',
-				href: 'https://www.erlnmyr.be/presenteren/',
+				href: 'https://www.erlnmyr.be/presenting/',
 				external: false,
 				photoLabel: '[ photo: hosting on stage ]',
 				hue: 90,
 			},
 			{
-				tag: 'Improv',
-				title: 'Improv performer',
-				desc: 'I perform improv since 2011, with Commotie, Prism, Before, Swaajp and Improbubble among others.',
+				tag: 'Improv theatre',
+				title: 'Performer',
+				desc: "I have 15 years of experience with improvised theatre. I've won Kemphanen — the competition for best Flemish improv show — three times, and took bronze for Belgium at the 2024 European Improv Championship.",
 				accent: 'oklch(55% 0.15 340)',
 				href: null,
 				external: false,
@@ -207,9 +207,9 @@ export const copy: { nl: Copy; en: Copy } = {
 				hue: 340,
 			},
 			{
-				tag: 'Teaching',
-				title: 'Improv teacher',
-				desc: 'I teach at Wisper, previously at Mechelen Conservatorium and the Swaajp School of Improv, and give workshops at international festivals.',
+				tag: 'Improv theatre',
+				title: 'Teacher',
+				desc: 'I teach impro at Wisper, previously at Mechelen Conservatorium and the Swaajp School of Improv, and give workshops at international festivals.',
 				accent: 'oklch(55% 0.15 250)',
 				href: null,
 				external: false,
