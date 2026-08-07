@@ -49,7 +49,7 @@ export const copy: { nl: Copy; en: Copy } = {
 		hero: {
 			kicker: 'Theatermaker · Wetenschapscommunicator · Improvisator',
 			title: 'Ben Verhoeven',
-			sub: 'Doctor in de taalkunde die wetenschap het podium op tilt. Ik combineer improvisatietheater met wetenschapscommunicatie — als maker, verteller, docent en coach.',
+			sub: 'Doctor in de taalkunde die wetenschap het podium op tilt. Ik combineer improvisatietheater en wetenschapscommunicatie — als maker, verteller, docent en coach.',
 			ctaTraining: 'Bekijk training & coaching',
 			ctaContact: 'Neem contact op',
 		},
@@ -58,9 +58,9 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Theater',
 				title: 'Theatermaker',
-				desc: 'Ik maak en speel wetenschapstheater bij ERLNMYR — lezingen die een meeslepend, interactief spel worden. Bekijk het aanbod op erlnmyr.be ↗',
+				desc: 'Ik maak en speel theater geïnspireerd door wetenschap als ERLNMYR. Bekijk het aanbod op erlnmyr.be ↗',
 				accent: 'oklch(55% 0.15 35)',
-				href: 'https://www.erlnmyr.be',
+				href: 'https://www.erlnmyr.be/voorstellingen',
 				external: true,
 				photoLabel: '[ foto: voorstelling op scène ]',
 				hue: 35,
@@ -68,7 +68,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Wetenschapscommunicatie',
 				title: 'Trainer & coach',
-				desc: 'Ik begeleid onderzoekers en professionals in storytelling, podiumaanwezigheid en presenteren, en breng wetenschap tot leven als communicator — met FameLab en Bright Club op de teller.',
+				desc: 'Ik begeleid onderzoekers en professionals in presenteren, storytelling, en podiumvaardigheden, en coach voor belangrijke presentaties.',
 				accent: 'oklch(55% 0.15 190)',
 				href: '/training',
 				external: false,
@@ -78,9 +78,9 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Presenteren',
 				title: 'Spreker, moderator & presentator',
-				desc: 'Ik presenteer events, modereer panelgesprekken en debatten, en breng een boodschap glashelder over aan elk publiek.',
+				desc: 'Ik presenteer evenementen, modereer panelgesprekken en debatten, en breng een boodschap glashelder over aan elk publiek.',
 				accent: 'oklch(55% 0.15 90)',
-				href: null,
+				href: "https://www.erlnmyr.be/presenteren/",
 				external: false,
 				photoLabel: '[ foto: presentator op podium ]',
 				hue: 90,
@@ -88,7 +88,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Improvisatie',
 				title: 'Improvisatie-acteur',
-				desc: 'Ik speel al sinds 2011 improv, o.a. bij Commotie en Prism — brons met Team Belgium op het EK improvisatie 2024.',
+				desc: 'Ik speel al sinds 2011 improvisatietheater, o.a. bij Commotie, Prism, Before, Swaajp en Improbubble.',
 				accent: 'oklch(55% 0.15 340)',
 				href: null,
 				external: false,
@@ -98,7 +98,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Onderwijs',
 				title: 'Improvisatie-docent',
-				desc: 'Ik doceer bij Wisper, eerder aan het Conservatorium Mechelen en de Swaajp School of Improv, en geef workshops op internationale festivals.',
+				desc: 'Ik doceer bij Wisper, eerder aan Conservatorium Mechelen en de Swaajp School of Improv, en geef workshops op internationale festivals.',
 				accent: 'oklch(55% 0.15 250)',
 				href: null,
 				external: false,
@@ -160,7 +160,7 @@ export const copy: { nl: Copy; en: Copy } = {
 		hero: {
 			kicker: 'Theatre maker · Science communicator · Improviser',
 			title: 'Ben Verhoeven',
-			sub: 'A doctor in linguistics who puts science on stage. I blend improvisational theatre with science communication — as a performer, storyteller, teacher and coach.',
+			sub: 'A doctor in linguistics who puts science on stage. I blend improvisational theatre and science communication — as a performer, storyteller, teacher and coach.',
 			ctaTraining: 'See training & coaching',
 			ctaContact: 'Get in touch',
 		},
@@ -169,9 +169,9 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Theatre',
 				title: 'Theatre maker',
-				desc: 'I create and perform science theatre with ERLNMYR — turning lectures into immersive, interactive shows. See the full programme at erlnmyr.be ↗',
+				desc: 'I create and perform theatre inspired by science as ERLNMYR. See the full programme at erlnmyr.be ↗',
 				accent: 'oklch(55% 0.15 35)',
-				href: 'https://www.erlnmyr.be',
+				href: 'https://www.erlnmyr.be/voorstellingen',
 				external: true,
 				photoLabel: '[ photo: on-stage performance ]',
 				hue: 35,
@@ -179,7 +179,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Science communication',
 				title: 'Trainer & coach',
-				desc: 'I guide researchers and professionals in storytelling, stage presence and presenting, and bring science to life as a communicator — with FameLab and Bright Club along the way.',
+				desc: 'I guide researchers and professionals in presenting, storytelling, and stage skills, and coach for important presentations.',
 				accent: 'oklch(55% 0.15 190)',
 				href: '/training',
 				external: false,
@@ -191,7 +191,7 @@ export const copy: { nl: Copy; en: Copy } = {
 				title: 'Speaker, moderator & host',
 				desc: 'I host events, moderate panels and debates, and get a message across clearly to any audience.',
 				accent: 'oklch(55% 0.15 90)',
-				href: null,
+				href: 'https://www.erlnmyr.be/presenteren/',
 				external: false,
 				photoLabel: '[ photo: hosting on stage ]',
 				hue: 90,
@@ -199,7 +199,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			{
 				tag: 'Improv',
 				title: 'Improv performer',
-				desc: 'I perform improv since 2011, with Commotie and Prism among others — bronze with Team Belgium at the 2024 European Improv Championships.',
+				desc: 'I perform improv since 2011, with Commotie, Prism, Before, Swaajp and Improbubble among others.',
 				accent: 'oklch(55% 0.15 340)',
 				href: null,
 				external: false,
