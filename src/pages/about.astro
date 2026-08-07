@@ -1,0 +1,51 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { copy } from '../i18n/copy';
+
+const { nl, en } = copy;
+---
+
+<PageLayout
+	title="Over Ben Verhoeven — Ben Verhoeven"
+	description="Achtergrond van Ben Verhoeven in wetenschap en improvisatietheater."
+>
+	<!-- ABOUT HERO -->
+	<div class="training-hero">
+		<div class="hero-kicker">
+			<span class="lang-nl">{nl.about.kicker}</span><span class="lang-en">{en.about.kicker}</span>
+		</div>
+		<h1>
+			<span class="lang-nl">{nl.about.title}</span><span class="lang-en">{en.about.title}</span>
+		</h1>
+		<p>
+			<span class="lang-nl">{nl.about.intro}</span><span class="lang-en">{en.about.intro}</span>
+		</p>
+	</div>
+
+	<!-- SECTIONS -->
+	{
+		nl.about.sections.map((section, i) => {
+			const enSection = en.about.sections[i];
+			return (
+				<div class:list={['section', { 'section-alt': i % 2 === 1 }]}>
+					<div class="section-inner prose-width">
+						<h2 class="section-heading">
+							<span class="lang-nl">{section.heading}</span>
+							<span class="lang-en">{enSection.heading}</span>
+						</h2>
+						<div class="about-section-body lang-block-nl">
+							{section.paragraphs.map((p) => (
+								<p>{p}</p>
+							))}
+						</div>
+						<div class="about-section-body lang-block-en">
+							{enSection.paragraphs.map((p) => (
+								<p>{p}</p>
+							))}
+						</div>
+					</div>
+				</div>
+			);
+		})
+	}
+</PageLayout>

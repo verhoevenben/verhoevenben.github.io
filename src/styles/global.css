@@ -276,6 +276,11 @@ html[data-lang='en'] .lang-btn[data-lang-btn='en'] {
 .section-alt {
 	background: var(--surface);
 }
+.about-section-body p {
+	font-size: 17px;
+	line-height: 1.7;
+	color: var(--ink-soft);
+}
 .section-heading {
 	font-size: 40px;
 	margin: 0 0 40px;

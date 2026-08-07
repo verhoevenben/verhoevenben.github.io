@@ -5,6 +5,7 @@ const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const isHome = pathname === '/' || pathname === '';
 const isTraining = pathname.startsWith('/training');
 const isUpdates = pathname.startsWith('/updates');
+const isAbout = pathname.startsWith('/about');
 ---
 
 <header class="site-nav">
@@ -14,11 +15,18 @@ const isUpdates = pathname.startsWith('/updates');
 			<a href="/" class:list={['nav-link', { active: isHome }]}>
 				<span class="lang-nl">{copy.nl.nav.home}</span><span class="lang-en">{copy.en.nav.home}</span>
 			</a>
-			<a href="/training" class:list={['nav-link', { active: isTraining }]}>
-				<span class="lang-nl">{copy.nl.nav.training}</span><span class="lang-en"
-					>{copy.en.nav.training}</span
-				>
+			<a href="/about" class:list={['nav-link', { active: isAbout }]}>
+				<span class="lang-nl">{copy.nl.nav.about}</span><span class="lang-en">{copy.en.nav.about}</span>
 			</a>
+			{
+				/* Temporarily hidden from nav — re-add this link to bring the page back into the menu.
+				<a href="/training" class:list={['nav-link', { active: isTraining }]}>
+					<span class="lang-nl">{copy.nl.nav.training}</span><span class="lang-en"
+						>{copy.en.nav.training}</span
+					>
+				</a>
+				*/
+			}
 			<a href="/updates" class:list={['nav-link', { active: isUpdates }]}>
 				<span class="lang-nl">{copy.nl.nav.blog}</span><span class="lang-en">{copy.en.nav.blog}</span>
 			</a>
