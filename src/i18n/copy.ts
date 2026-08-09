@@ -26,7 +26,6 @@ export interface Copy {
 		kickerItems: string[];
 		title: string;
 		sub: string;
-		ctaTraining: string;
 		ctaContact: string;
 	};
 	portfolioHeading: string;
@@ -61,7 +60,6 @@ export const copy: { nl: Copy; en: Copy } = {
 			kickerItems: ['Theatermaker', 'Wetenschapscommunicator', 'Improvisator', 'Trainer', 'Presentator'],
 			title: 'Ben Verhoeven',
 			sub: 'Doctor in de taalkunde die wetenschap het podium op tilt. Ik combineer improvisatietheater en wetenschapscommunicatie — als maker, verteller, docent en coach.',
-			ctaTraining: 'Bekijk training & coaching',
 			ctaContact: 'Neem contact op',
 		},
 		portfolioHeading: 'Wat ik doe',
@@ -203,7 +201,6 @@ export const copy: { nl: Copy; en: Copy } = {
 			kickerItems: ['Theatre maker', 'Science communicator', 'Improviser', 'Trainer', 'Speaker'],
 			title: 'Ben Verhoeven',
 			sub: 'A doctor in linguistics who puts science on stage. I blend improvisational theatre and science communication — as a performer, storyteller, teacher and coach.',
-			ctaTraining: 'See training & coaching',
 			ctaContact: 'Get in touch',
 		},
 		portfolioHeading: 'What I do',
