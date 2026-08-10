@@ -167,7 +167,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			kicker: 'Achtergrond',
 			title: 'Over Ben Verhoeven',
 			intro:
-				'ERLNMYR is het bedrijf van improvisator en doctor in de taalkunde Ben Verhoeven. Tijdens zijn wetenschappelijke carrière raakte hij gefascineerd door wetenschapscommunicatie en hij gebruikte daar ook steeds frequenter zijn improvisatievaardigheden voor. Bens achtergrond en lopende projecten in zowel wetenschap als improvisatie schetsen we hieronder.',
+				'Ben heeft een levenslange passie voor zowel kunst als wetenschap. Als nieuwsgierige peuter ontdekte hij al dat vloertegels barsten als je er hard genoeg met een houten hamertje op slaat. Op zijn achtste startte hij met theaterlessen, die tot zijn achttiende zijn veilige haven zouden blijven, en op school koos hij voor wetenschappen en wiskunde met muziekles erbovenop. Aan de universiteit studeerde hij eerst Engels en theaterwetenschappen, om nadien verder te gaan met een master en doctoraat computerlinguïstiek — met improvisatietheater als vaste metgezel onderweg. Jarenlang schipperde hij zo tussen kunst en wetenschap, tot hij beide uiteindelijk samenbracht in zijn eigen bedrijf ERLNMYR, waar wetenschap het podium krijgt dat het verdient. Die veelzijdigheid zie je vandaag nog steeds terug in alles wat hij doet, als docent, acteur en presentator. Hieronder schetsen we zijn achtergrond in zowel improvisatie als wetenschap.',
 			sections: [
 				{
 					heading: 'Improvisatie',
@@ -179,7 +179,7 @@ export const copy: { nl: Copy; en: Copy } = {
 						'Ook muzikaal kan je Ben aan het werk zien. En dat dus niet enkel met zijn stem, maar ook met zijn handen en voeten. Zo zet hij geregeld een stap opzij om het theater niet te leiden maar net als percussionist bij te staan. Een mooi voorbeeld is Improovelicious, het internationaal improfestival in Leuven waar hij in 2018 de drums verzorgde.',
 						'In 2022 verscheen het hoofdstuk "Improvisation and the Scientific Method" in het boek Essays on Improv dat hij samen met Gael Doorneweerd-Perry schreef.',
 						'In 2024 behaalde hij met team België brons op het EK improvisatietheater in München.',
-						'Hij geeft les bij Wisper na eerdere ervaringen bij Conservatorium Mechelen en de Swaajp School of Improv.',
+						'Hij geeft les bij Wisper na eerdere ervaringen bij Conservatorium Mechelen en de Swaajp School of Improv. Hij kreeg van de Vlaamse Overheid de erkenning van bekwaamheid als docent improvisatietheater op basis van ervaring.',
 					],
 				},
 				{
@@ -308,7 +308,7 @@ export const copy: { nl: Copy; en: Copy } = {
 			kicker: 'Background',
 			title: 'About Ben Verhoeven',
 			intro:
-				"ERLNMYR is the business of improviser and doctor in linguistics Ben Verhoeven. During his scientific career he became fascinated with science communication for which he used more and more of his improvisational skills. Below you will find an overview of Ben's background and running projects in both science and improvisation.",
+				"Ben has a lifelong passion for both the arts and the sciences. As an inquisitive toddler, he discovered that floor tiles crack if you hit them hard enough with a wooden hammer. At eight he started theatre classes, which remained his safe haven until he was eighteen, while at school he studied science and mathematics and took up music lessons on the side. At university he studied English and theatre, only to switch to a master's and PhD in computational linguistics — with improvisational theatre as a constant companion along the way. For years he went back and forth between art and science, until he finally brought the two together in his own company, ERLNMYR, where science gets the stage it deserves. You can still see that versatility today in everything he does, as a teacher, performer and presenter. Below you'll find his background in both improvisation and science.",
 			sections: [
 				{
 					heading: 'Improvisation',
