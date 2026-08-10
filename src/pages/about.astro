@@ -3,8 +3,23 @@ import { Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import { copy } from '../i18n/copy';
 import aboutPhoto from '../assets/about/BenVerhoeven-By-Fredography-Full-30.jpg';
+import sciencePhoto1 from '../assets/about/12052574_957342484323516_7366517447479365344_o.jpg';
+import sciencePhoto2 from '../assets/about/2016-11-27-11.06.30-1.jpg';
+import sciencePhoto3 from '../assets/about/2016-12-09-AMiCA-0137.jpg';
+import sciencePhoto4 from '../assets/about/2017-11-16-16.51.26.jpg';
+import sciencePhoto5 from '../assets/about/w668q85_Z2015_046_008.jpg';
+import sciencePhoto6 from '../assets/about/w668q85_Z2015_046_073.jpg';
 
 const { nl, en } = copy;
+
+const sciencePhotos = [
+	sciencePhoto1,
+	sciencePhoto2,
+	sciencePhoto3,
+	sciencePhoto4,
+	sciencePhoto5,
+	sciencePhoto6,
+];
 ---
 
 <PageLayout
@@ -36,22 +51,36 @@ const { nl, en } = copy;
 	{
 		nl.about.sections.map((section, i) => {
 			const enSection = en.about.sections[i];
+			const hasPhotos = i === 1;
 			return (
 				<div class:list={['section', { 'section-alt': i % 2 === 1 }]}>
-					<div class="section-inner prose-width">
+					<div class:list={['section-inner', hasPhotos ? 'science-width' : 'prose-width']}>
 						<h2 class="section-heading">
 							<span class="lang-nl">{section.heading}</span>
 							<span class="lang-en">{enSection.heading}</span>
 						</h2>
-						<div class="about-section-body lang-block-nl">
-							{section.paragraphs.map((p) => (
-								<p>{p}</p>
-							))}
-						</div>
-						<div class="about-section-body lang-block-en">
-							{enSection.paragraphs.map((p) => (
-								<p>{p}</p>
-							))}
+						<div class:list={[{ 'about-science-row': hasPhotos }]}>
+							<div class:list={[{ 'about-science-text': hasPhotos }]}>
+								<div class="about-section-body lang-block-nl">
+									{section.paragraphs.map((p) => (
+										<p>{p}</p>
+									))}
+								</div>
+								<div class="about-section-body lang-block-en">
+									{enSection.paragraphs.map((p) => (
+										<p>{p}</p>
+									))}
+								</div>
+							</div>
+							{hasPhotos && (
+								<div class="about-science-photos">
+									{sciencePhotos.map((photo) => (
+										<div class="about-science-photo">
+											<Image src={photo} alt="" width={320} />
+										</div>
+									))}
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
