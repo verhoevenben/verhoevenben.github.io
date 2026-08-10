@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import { copy } from '../i18n/copy';
+import aboutPhoto from '../assets/about/BenVerhoeven-By-Fredography-Full-30.jpg';
 
 const { nl, en } = copy;
 ---
@@ -17,9 +19,17 @@ const { nl, en } = copy;
 		<h1>
 			<span class="lang-nl">{nl.about.title}</span><span class="lang-en">{en.about.title}</span>
 		</h1>
-		<p>
-			<span class="lang-nl">{nl.about.intro}</span><span class="lang-en">{en.about.intro}</span>
-		</p>
+		<div class="about-intro-row">
+			<p class="about-intro-text">
+				<span class="lang-nl">{nl.about.intro}</span><span class="lang-en">{en.about.intro}</span>
+			</p>
+			<div class="hero-photo about-intro-photo">
+				<Image src={aboutPhoto} alt="Ben Verhoeven" width={480} />
+				<p class="hero-photo-credit">
+					<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>Frédéric Paulussen
+				</p>
+			</div>
+		</div>
 	</div>
 
 	<!-- SECTIONS -->

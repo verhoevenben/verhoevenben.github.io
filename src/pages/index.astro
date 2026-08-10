@@ -14,6 +14,13 @@ import teachingPhoto from '../assets/_MG_6901.jpg';
 const { nl, en } = copy;
 
 const portfolioPhotos = [theatrePhoto, coachingPhoto, presentingPhoto, improvPhoto, teachingPhoto];
+const portfolioCredits = [
+	'Karolina Maruszak',
+	'Ben Van den Broecke',
+	'Tomas Sisk',
+	'Erik Duinslaeger',
+	'Sónia Batista',
+];
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -93,7 +100,15 @@ function newsStripeStyle(hue: number) {
 						return (
 							<Tag class="card" {...linkProps}>
 								<div class="card-image" style={photo ? undefined : stripeStyle(item.hue)}>
-									{photo && <Image src={photo} alt="" width={600} />}
+									{photo && (
+										<>
+											<Image src={photo} alt="" width={600} />
+											<p class="hero-photo-credit">
+												<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>
+												{portfolioCredits[i]}
+											</p>
+										</>
+									)}
 									{!photo && (
 										<span class="card-image-label">
 											<span class="lang-nl">{item.photoLabel}</span>
