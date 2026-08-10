@@ -63,12 +63,12 @@ const sciencePhotos = [
 							<div class:list={[{ 'about-science-text': hasPhotos }]}>
 								<div class="about-section-body lang-block-nl">
 									{section.paragraphs.map((p) => (
-										<p>{p}</p>
+										<p set:html={p} />
 									))}
 								</div>
 								<div class="about-section-body lang-block-en">
 									{enSection.paragraphs.map((p) => (
-										<p>{p}</p>
+										<p set:html={p} />
 									))}
 								</div>
 							</div>
