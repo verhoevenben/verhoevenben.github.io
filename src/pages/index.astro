@@ -93,9 +93,12 @@ function newsStripeStyle(hue: number) {
 						const photo = portfolioPhotos[i];
 						const Tag = item.href ? 'a' : 'div';
 						const linkProps = item.href
-							? item.external
-								? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
-								: { href: item.href }
+							? {
+									href: item.href,
+									'data-href-nl': item.href,
+									'data-href-en': enItem.href,
+									...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}),
+								}
 							: {};
 						return (
 							<Tag class="card" {...linkProps}>
