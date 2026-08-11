@@ -8,13 +8,27 @@
 			var nav = (navigator.language || 'nl').toLowerCase();
 			return nav.startsWith('nl') ? 'nl' : 'en';
 		}
+		function syncLinks(lang) {
+			document.querySelectorAll('[data-href-nl]').forEach(function (el) {
+				var href = lang === 'en' ? el.getAttribute('data-href-en') : el.getAttribute('data-href-nl');
+				if (href) el.setAttribute('href', href);
+			});
+		}
 		var lang = detect();
 		document.documentElement.setAttribute('data-lang', lang);
 		document.documentElement.setAttribute('lang', lang);
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', function () {
+				syncLinks(lang);
+			});
+		} else {
+			syncLinks(lang);
+		}
 
 		window.setLang = function (lang) {
 			document.documentElement.setAttribute('data-lang', lang);
 			document.documentElement.setAttribute('lang', lang);
+			syncLinks(lang);
 			try {
 				localStorage.setItem('lang', lang);
 			} catch (e) {}
