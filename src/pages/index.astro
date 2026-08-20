@@ -70,7 +70,13 @@ function newsStripeStyle(hue: number) {
 				</a>
 			</div>
 		</div>
-		<div class="hero-photo">
+		<div
+			class="hero-photo js-lightbox"
+			data-full={heroPhoto.src}
+			data-credit="Frédéric Paulussen"
+			tabindex="0"
+			role="button"
+		>
 			<Image src={heroPhoto} alt="Ben Verhoeven" width={800} />
 			<p class="hero-photo-credit">
 				<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>Frédéric Paulussen

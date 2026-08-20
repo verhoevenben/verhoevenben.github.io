@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import LangScript from '../components/LangScript.astro';
+import Lightbox from '../components/Lightbox.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -24,10 +25,15 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageCredit } =
 			}
 			.hero-image {
 				width: 100%;
+				text-align: center;
 			}
-			.hero-image img {
+			.hero-image-inner {
+				position: relative;
+				display: inline-block;
+				max-width: 100%;
+			}
+			.hero-image-inner img {
 				display: block;
-				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--card-shadow);
 			}
@@ -55,10 +61,21 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageCredit } =
 				font-style: italic;
 			}
 			.hero-image-credit {
-				margin: 0.5em 0 0;
-				text-align: center;
-				font-size: 0.8em;
-				color: var(--muted-2);
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: 0;
+				padding: 8px 12px;
+				font-size: 13px;
+				color: oklch(98% 0.01 240);
+				background: oklch(0% 0 0 / 0.6);
+				border-radius: 0 0 12px 12px;
+				opacity: 0;
+				transition: opacity 0.2s ease;
+			}
+			.hero-image-inner:hover .hero-image-credit {
+				opacity: 1;
 			}
 		</style>
 	</head>
@@ -68,12 +85,16 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageCredit } =
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-					{heroImage && heroImageCredit && (
-						<p class="hero-image-credit">
-							<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>
-							{heroImageCredit}
-						</p>
+					{heroImage && (
+						<div class="hero-image-inner">
+							<Image width={1020} height={510} src={heroImage} alt="" />
+							{heroImageCredit && (
+								<p class="hero-image-credit">
+									<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>
+									{heroImageCredit}
+								</p>
+							)}
+						</div>
 					)}
 				</div>
 				<div class="prose">
@@ -99,5 +120,6 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageCredit } =
 			</article>
 		</main>
 		<Footer />
+		<Lightbox />
 	</body>
 </html>

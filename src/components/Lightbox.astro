@@ -1,0 +1,118 @@
+---
+---
+
+<div id="lightbox-overlay" class="lightbox-overlay" hidden>
+	<button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+	<img class="lightbox-image" src="" alt="" />
+	<p class="lightbox-credit" hidden>
+		<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span><span
+			class="lightbox-credit-name"></span>
+	</p>
+</div>
+
+<style>
+	.lightbox-overlay {
+		position: fixed;
+		inset: 0;
+		background: oklch(10% 0.02 240 / 0.92);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 14px;
+		padding: 60px 24px;
+		z-index: 1000;
+		cursor: zoom-out;
+	}
+	.lightbox-overlay[hidden] {
+		display: none;
+	}
+	.lightbox-image {
+		max-width: 90vw;
+		max-height: 80vh;
+		object-fit: contain;
+		border-radius: 8px;
+		box-shadow: var(--photo-shadow);
+		cursor: default;
+	}
+	.lightbox-credit {
+		margin: 0;
+		min-height: 1em;
+		color: var(--dark-ink);
+		font-size: 14px;
+		text-align: center;
+	}
+	.lightbox-close {
+		position: absolute;
+		top: 18px;
+		right: 22px;
+		padding: 4px 10px;
+		border: none;
+		background: none;
+		color: var(--dark-ink);
+		font-size: 34px;
+		line-height: 1;
+		cursor: pointer;
+	}
+	:global(.js-lightbox) {
+		cursor: zoom-in;
+	}
+</style>
+
+<script is:inline>
+	(function () {
+		function init() {
+			var overlay = document.getElementById('lightbox-overlay');
+			if (!overlay) return;
+			var img = overlay.querySelector('.lightbox-image');
+			var credit = overlay.querySelector('.lightbox-credit');
+			var creditName = overlay.querySelector('.lightbox-credit-name');
+			var closeBtn = overlay.querySelector('.lightbox-close');
+
+			function open(trigger) {
+				var full = trigger.getAttribute('data-full');
+				if (!full) return;
+				var creditText = trigger.getAttribute('data-credit') || '';
+				img.src = full;
+				img.alt = creditText;
+				creditName.textContent = creditText;
+				credit.hidden = !creditText;
+				overlay.hidden = false;
+				document.body.style.overflow = 'hidden';
+			}
+			function close() {
+				overlay.hidden = true;
+				img.src = '';
+				document.body.style.overflow = '';
+			}
+
+			document.addEventListener('click', function (e) {
+				var trigger = e.target.closest('.js-lightbox');
+				if (trigger) {
+					open(trigger);
+					return;
+				}
+				if (e.target === overlay || e.target === closeBtn) {
+					close();
+				}
+			});
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape' && !overlay.hidden) {
+					close();
+					return;
+				}
+				if (e.key !== 'Enter' && e.key !== ' ') return;
+				var trigger = e.target.closest && e.target.closest('.js-lightbox');
+				if (trigger) {
+					e.preventDefault();
+					open(trigger);
+				}
+			});
+		}
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init);
+		} else {
+			init();
+		}
+	})();
+</script>

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import LangScript from '../components/LangScript.astro';
+import Lightbox from '../components/Lightbox.astro';
 import type { ImageMetadata } from 'astro';
 import defaultShareImage from '../assets/BenVerhoeven-By-Fredography-Full-73.jpg';
 
@@ -27,5 +28,6 @@ const { title, description, image = defaultShareImage } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
+		<Lightbox />
 	</body>
 </html>

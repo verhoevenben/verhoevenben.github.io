@@ -9,6 +9,16 @@ import sciencePhoto3 from '../assets/about/2016-12-09-AMiCA-0137.jpg';
 import sciencePhoto4 from '../assets/about/2017-11-16-16.51.26.jpg';
 import sciencePhoto5 from '../assets/about/w668q85_Z2015_046_008.jpg';
 import sciencePhoto6 from '../assets/about/w668q85_Z2015_046_073.jpg';
+import improvPhoto2 from '../assets/about/2018-10-02 20.56.34.jpg';
+import improvPhoto3 from '../assets/about/2023-12-17 Kemphanen 2023 Finale 661.jpg';
+import improvPhoto4 from '../assets/about/45690965054_a2b9a9f6f3_o.jpg';
+import improvPhoto5 from '../assets/about/46412714741_e9a19a4d45_o.jpg';
+import improvPhoto6 from '../assets/about/DSC_0289.jpg';
+import improvPhoto7 from '../assets/about/IA24-tue20feb-MusicalNarrative-17.jpg';
+import improvPhoto8 from '../assets/about/ImproAmsterdam2022-Prism-05.jpg';
+import improvPhoto9 from '../assets/about/ImproEM 2024_Mai 19_by Sara Kurig-87.jpg';
+import improvPhoto10 from '../assets/about/PANA0765.jpg';
+import improvPhoto11 from '../assets/about/amai!_©FrankToussaint-187_LR.jpg';
 
 const { nl, en } = copy;
 
@@ -20,6 +30,35 @@ const sciencePhotos = [
 	sciencePhoto5,
 	sciencePhoto6,
 ];
+const sciencePhotoCredits = ['Ward Braeckevelt', '', '', '', '', ''];
+
+const improvPhotos = [
+	improvPhoto2,
+	improvPhoto3,
+	improvPhoto4,
+	improvPhoto5,
+	improvPhoto6,
+	improvPhoto7,
+	improvPhoto8,
+	improvPhoto9,
+	improvPhoto10,
+	improvPhoto11,
+];
+const improvPhotoCredits = [
+	'Sofia International Improv Fest',
+	'Erik Duinslaeger',
+	'BIG IF',
+	'BIG IF',
+	'Gina Bjorgo',
+	'Robin Straaijer',
+	'Robin Straaijer',
+	'Sara Kurig',
+	'Chee Wai Chan',
+	'Frank Toussaint',
+];
+
+const sectionPhotos = [improvPhotos, sciencePhotos];
+const sectionPhotoCredits = [improvPhotoCredits, sciencePhotoCredits];
 ---
 
 <PageLayout
@@ -38,7 +77,13 @@ const sciencePhotos = [
 			<p class="about-intro-text">
 				<span class="lang-nl">{nl.about.intro}</span><span class="lang-en">{en.about.intro}</span>
 			</p>
-			<div class="hero-photo about-intro-photo">
+			<div
+				class="hero-photo about-intro-photo js-lightbox"
+				data-full={aboutPhoto.src}
+				data-credit="Frédéric Paulussen"
+				tabindex="0"
+				role="button"
+			>
 				<Image src={aboutPhoto} alt="Ben Verhoeven" width={480} />
 				<p class="hero-photo-credit">
 					<span class="lang-nl">Foto: </span><span class="lang-en">Photo: </span>Frédéric Paulussen
@@ -51,16 +96,18 @@ const sciencePhotos = [
 	{
 		nl.about.sections.map((section, i) => {
 			const enSection = en.about.sections[i];
-			const hasPhotos = i === 1;
+			const photos = sectionPhotos[i];
+			const photoCredits = sectionPhotoCredits[i];
+			const hasPhotos = Boolean(photos);
 			return (
 				<div class:list={['section', { 'section-alt': i % 2 === 1 }]}>
-					<div class:list={['section-inner', hasPhotos ? 'science-width' : 'prose-width']}>
+					<div class:list={['section-inner', hasPhotos ? 'photos-width' : 'prose-width']}>
 						<h2 class="section-heading">
 							<span class="lang-nl">{section.heading}</span>
 							<span class="lang-en">{enSection.heading}</span>
 						</h2>
-						<div class:list={[{ 'about-science-row': hasPhotos }]}>
-							<div class:list={[{ 'about-science-text': hasPhotos }]}>
+						<div class:list={[{ 'about-photo-row': hasPhotos }]}>
+							<div class:list={[{ 'about-photo-text': hasPhotos }]}>
 								<div class="about-section-body lang-block-nl">
 									{section.paragraphs.map((p) => (
 										<p set:html={p} />
@@ -73,9 +120,15 @@ const sciencePhotos = [
 								</div>
 							</div>
 							{hasPhotos && (
-								<div class="about-science-photos">
-									{sciencePhotos.map((photo) => (
-										<div class="about-science-photo">
+								<div class="about-photo-grid">
+									{photos.map((photo, j) => (
+										<div
+											class="about-photo-item js-lightbox"
+											data-full={photo.src}
+											data-credit={photoCredits[j]}
+											tabindex="0"
+											role="button"
+										>
 											<Image src={photo} alt="" width={320} />
 										</div>
 									))}
