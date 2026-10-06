@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="nl" data-lang="nl" data-astro-cid-tldeq5d5><head><script>
+	(function () {
+		function detect() {
+			try {
+				var saved = localStorage.getItem('lang');
+				if (saved === 'nl' || saved === 'en') return saved;
+			} catch (e) {}
+			var nav = (navigator.language || 'nl').toLowerCase();
+			return nav.startsWith('nl') ? 'nl' : 'en';
+		}
+		function syncLinks(lang) {
+			document.querySelectorAll('[data-href-nl]').forEach(function (el) {
+				var href = lang === 'en' ? el.getAttribute('data-href-en') : el.getAttribute('data-href-nl');
+				if (href) el.setAttribute('href', href);
+			});
+		}
+		var lang = detect();
+		document.documentElement.setAttribute('data-lang', lang);
+		document.documentElement.setAttribute('lang', lang);
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', function () {
+				syncLinks(lang);
+			});
+		} else {
+			syncLinks(lang);
+		}
+
+		window.setLang = function (lang) {
+			document.documentElement.setAttribute('data-lang', lang);
+			document.documentElement.setAttribute('lang', lang);
+			syncLinks(lang);
+			try {
+				localStorage.setItem('lang', lang);
+			} catch (e) {}
+		};
+	})();
+</script><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Ben Verhoeven" href="https://benverhoeven.be/rss.xml"><meta name="generator" content="Astro v7.0.8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Canonical URL --><link rel="canonical" href="https://benverhoeven.be/updates/premiere-waar-is-waarheid/"><!-- Primary Meta Tags --><title>Première van &quot;Waar is Waarheid?&quot; komt eraan</title><meta name="description" content="Op 7 november 2026 om 15u gaat &quot;Waar is Waarheid?&quot;, een meespeelende whodunnit voor de hele familie (8+), in première in Theater Het Klokhuis in Antwerpen."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://benverhoeven.be/updates/premiere-waar-is-waarheid/"><meta property="og:title" content="Première van &quot;Waar is Waarheid?&quot; komt eraan"><meta property="og:description" content="Op 7 november 2026 om 15u gaat &quot;Waar is Waarheid?&quot;, een meespeelende whodunnit voor de hele familie (8+), in première in Theater Het Klokhuis in Antwerpen."><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/_astro/Lightbox.C-VyKl3S.css"><style>main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{text-align:center;width:100%}.hero-image-inner[data-astro-cid-tldeq5d5]{max-width:100%;display:inline-block;position:relative}.hero-image-inner[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--card-shadow);border-radius:12px;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:var(--ink);margin:auto;padding:1em}.prose[data-astro-cid-tldeq5d5] .post-photo-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:2em 0;display:grid}.prose[data-astro-cid-tldeq5d5] .post-photo-item img{aspect-ratio:3/4;object-fit:cover;width:100%;height:100%;box-shadow:var(--card-shadow);border-radius:12px;display:block}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:var(--muted-2);margin-bottom:.5em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}.hero-image-credit[data-astro-cid-tldeq5d5]{color:oklch(98% .01 240);opacity:0;background:oklch(0% 0 0/.6);border-radius:0 0 12px 12px;margin:0;padding:8px 12px;font-size:13px;transition:opacity .2s;position:absolute;bottom:0;left:0;right:0}.hero-image-inner[data-astro-cid-tldeq5d5]:hover .hero-image-credit[data-astro-cid-tldeq5d5]{opacity:1}
+</style></head><body data-astro-cid-tldeq5d5><header class="site-nav"><div class="site-nav-inner"><a href="/" class="logo">Ben Verhoeven</a><nav class="nav-links"><a href="/" class="nav-link"><span class="lang-nl">Home</span><span class="lang-en">Home</span></a><a href="/about" class="nav-link"><span class="lang-nl">Over</span><span class="lang-en">About</span></a><a href="/updates" class="nav-link"><span class="lang-nl">Updates</span><span class="lang-en">Updates</span></a><div class="nav-divider" aria-hidden="true"></div><div class="lang-toggle" role="group" aria-label="Language"><button type="button" class="lang-btn" data-lang-btn="nl" onclick="setLang('nl')">NL</button><button type="button" class="lang-btn" data-lang-btn="en" onclick="setLang('en')">EN</button></div></nav></div></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5><div class="hero-image-inner" data-astro-cid-tldeq5d5><img src="/_astro/waar-is-waarheid-promo.D54MBVJX_Z2rPVoL.webp" alt data-astro-cid-tldeq5d5="true" loading="lazy" decoding="async" width="1020" height="510"><p class="hero-image-credit" data-astro-cid-tldeq5d5><span class="lang-nl" data-astro-cid-tldeq5d5>Foto: </span><span class="lang-en" data-astro-cid-tldeq5d5>Photo: </span>Hannelore Dreher</p></div></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2026-10-06T00:00:00.000Z" class="lang-nl">6 okt 2026</time><time datetime="2026-10-06T00:00:00.000Z" class="lang-en">Oct 6, 2026</time></div><h1 data-astro-cid-tldeq5d5><span class="lang-nl" data-astro-cid-tldeq5d5>Première van &quot;Waar is Waarheid?&quot; komt eraan</span><span class="lang-en" data-astro-cid-tldeq5d5>Premiere of &quot;Waar is Waarheid?&quot; coming up</span></h1><hr data-astro-cid-tldeq5d5></div><div class="lang-block-nl"><p><strong>Waarheid is vermist.</strong> Een geliefde burger, zomaar van de aardbol verdwenen, en de hele stad is
+in rep en roer. Twee detectives nemen de zaak aan, met versterking van een kind uit het publiek
+als kersverse aspirant-speurneus. Samen volgen ze het spoor langs een handvol verdachten, die
+allemaal hun eigen waarheid over Waarheid hebben.</p><p><a href="https://www.erlnmyr.be/waar-is-waarheid/"><strong>Waar is Waarheid?</strong></a> is nieuwsgierig meespeeltheater
+voor de hele familie (8+): een whodunnit waarin de kinderen de zaak zelf oplossen, en onderweg
+ontdekken waarom snel oordelen je op het verkeerde been zet. Eerder dit jaar won de voorstelling al
+de <a href="/updates/waar-is-de-waarheid-wint-dubbele-berrie-heesenprijs/">dubbele Berrie Heesenprijs voor Kinderfilosofie</a>.</p><p>Nu is het tijd voor de première:</p><ul>
+<li><strong>Zaterdag 7 november 2026, 15u</strong></li>
+<li><strong>Theater Het Klokhuis, Antwerpen</strong></li>
+</ul><p>Tickets zijn te koop via <a href="https://apps.ticketmatic.com/widgets/vlaams_fruit/addtickets?event=283838644932#!/addtickets">Vlaams Fruit</a>.</p><p>Met en van Tine Van den Broeck en mezelf, in een samenwerking tussen Odisee Hogeschool en
+ERLNMYR. Veel dank aan Innoviris voor de steun!</p></div>
+<div class="lang-block-en"><p><strong>Truth has gone missing.</strong> A beloved citizen has vanished off the face of the earth, and the whole
+city is in uproar. Two detectives take on the case, with help from a child in the audience as their
+brand-new trainee sleuth. Together they follow the trail past a handful of suspects, each with their
+own truth about Truth.</p><p><a href="https://www.erlnmyr.be/waar-is-waarheid/"><strong>Waar is Waarheid?</strong></a> (“Where is Truth?”) is curious,
+interactive theatre for the whole family (8+): a whodunnit in which the children solve the case
+themselves, and discover along the way why jumping to conclusions leads you astray. Earlier this
+year the show already won the
+<a href="/updates/waar-is-de-waarheid-wint-dubbele-berrie-heesenprijs/">double Berrie Heesenprijs for Children’s Philosophy</a>.</p><p>Now it’s time for the premiere:</p><ul>
+<li><strong>Saturday, November 7, 2026, 3 pm</strong></li>
+<li><strong>Theater Het Klokhuis, Antwerp</strong></li>
+</ul><p>Tickets are available via <a href="https://apps.ticketmatic.com/widgets/vlaams_fruit/addtickets?event=283838644932#!/addtickets">Vlaams Fruit</a>.
+The show is performed in Dutch.</p><p>Created and performed by Tine Van den Broeck and me, in a collaboration between Odisee University
+of Applied Sciences and ERLNMYR. Many thanks to Innoviris for their support!</p></div>
+<div class="post-photo-poster js-lightbox" data-full="/_astro/waar-is-waarheid-poster.FBWwv1Mi.jpg" data-credit="Hannelore Dreher" tabindex="0" role="button" style="max-width: 420px; margin: 2em auto;"><img src="/_astro/waar-is-waarheid-poster.FBWwv1Mi_2i8Nq0.webp" alt="Poster Waar is Waarheid?" style="display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: var(--card-shadow);" loading="lazy" decoding="async" width="840" height="1181"></div></div></article></main><footer class="site-footer"><p><span class="lang-nl">© 2026 Ben Verhoeven — ERLNMYR</span><span class="lang-en">© 2026 Ben Verhoeven — ERLNMYR</span></p></footer><div id="lightbox-overlay" class="lightbox-overlay" hidden data-astro-cid-utnzf2kr><button type="button" class="lightbox-close" aria-label="Close" data-astro-cid-utnzf2kr>&times;</button><img class="lightbox-image" src="" alt="" data-astro-cid-utnzf2kr><p class="lightbox-credit" hidden data-astro-cid-utnzf2kr><span class="lang-nl" data-astro-cid-utnzf2kr>Foto: </span><span class="lang-en" data-astro-cid-utnzf2kr>Photo: </span><span class="lightbox-credit-name" data-astro-cid-utnzf2kr></span></p></div><script>
+	(function () {
+		function init() {
+			var overlay = document.getElementById('lightbox-overlay');
+			if (!overlay) return;
+			var img = overlay.querySelector('.lightbox-image');
+			var credit = overlay.querySelector('.lightbox-credit');
+			var creditName = overlay.querySelector('.lightbox-credit-name');
+			var closeBtn = overlay.querySelector('.lightbox-close');
+
+			function open(trigger) {
+				var full = trigger.getAttribute('data-full');
+				if (!full) return;
+				var creditText = trigger.getAttribute('data-credit') || '';
+				img.src = full;
+				img.alt = creditText;
+				creditName.textContent = creditText;
+				credit.hidden = !creditText;
+				overlay.hidden = false;
+				document.body.style.overflow = 'hidden';
+			}
+			function close() {
+				overlay.hidden = true;
+				img.src = '';
+				document.body.style.overflow = '';
+			}
+
+			document.addEventListener('click', function (e) {
+				var trigger = e.target.closest('.js-lightbox');
+				if (trigger) {
+					open(trigger);
+					return;
+				}
+				if (e.target === overlay || e.target === closeBtn) {
+					close();
+				}
+			});
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape' && !overlay.hidden) {
+					close();
+					return;
+				}
+				if (e.key !== 'Enter' && e.key !== ' ') return;
+				var trigger = e.target.closest && e.target.closest('.js-lightbox');
+				if (trigger) {
+					e.preventDefault();
+					open(trigger);
+				}
+			});
+		}
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init);
+		} else {
+			init();
+		}
+	})();
+</script></body></html>
