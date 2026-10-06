@@ -44,6 +44,21 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageCredit } =
 				padding: 1em;
 				color: var(--ink);
 			}
+			.prose :global(.post-photo-grid) {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 16px;
+				margin: 2em 0;
+			}
+			.prose :global(.post-photo-item img) {
+				display: block;
+				width: 100%;
+				height: 100%;
+				aspect-ratio: 3 / 4;
+				object-fit: cover;
+				border-radius: 12px;
+				box-shadow: var(--card-shadow);
+			}
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
