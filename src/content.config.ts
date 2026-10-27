@@ -17,6 +17,8 @@ const blog = defineCollection({
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
 			heroImageCredit: z.string().optional(),
+			// Optional crop for the square tiles on the homepage and updates list (defaults to heroImage)
+			thumbnailImage: z.optional(image()),
 		}),
 });
 

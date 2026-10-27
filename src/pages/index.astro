@@ -161,7 +161,9 @@ function newsStripeStyle(hue: number) {
 								class="news-tile-photo"
 								style={post.data.heroImage ? undefined : newsStripeStyle(newsHues[i % newsHues.length])}
 							>
-								{post.data.heroImage && <Image src={post.data.heroImage} alt="" width={400} />}
+								{post.data.heroImage && (
+									<Image src={post.data.thumbnailImage ?? post.data.heroImage} alt="" width={400} />
+								)}
 							</div>
 							<div class="news-tile-title">
 								<span class="lang-nl">{post.data.title.nl}</span>
