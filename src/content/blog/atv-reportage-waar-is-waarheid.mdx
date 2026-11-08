@@ -1,0 +1,69 @@
+---
+title:
+  nl: 'ATV maakte een reportage over de première van "Waar is Waarheid?"'
+  en: 'ATV covers the premiere of "Waar is Waarheid?"'
+description:
+  nl: 'De Antwerpse regionale zender ATV was erbij op de première van "Waar is Waarheid?" in Theater Het Klokhuis en maakte er een reportage over: meespeeltheater als antwoord op fake news.'
+  en: 'Antwerp regional broadcaster ATV attended the premiere of "Waar is Waarheid?" at Theater Het Klokhuis and made a news report about it: interactive theatre as an answer to fake news.'
+pubDate: 'Nov 8 2026'
+heroImage: './images/atv-waar-is-waarheid.jpg'
+heroImageCredit: 'ATV'
+---
+
+import { Image } from 'astro:assets';
+import still from './images/atv-waar-is-waarheid.jpg';
+
+export const VideoLink = ({ label }) => (
+	<a
+		href="https://www.gva.be/atv/meespeeltheater-als-antwoord-op-fake-news-samen-gaan-we-op-zoek-naar-het-personage-waarheid/164238548.html"
+		target="_blank"
+		rel="noopener"
+		aria-label={label}
+		style="position: relative; display: block; margin: 1.5em 0; border-radius: 12px; overflow: hidden; box-shadow: var(--card-shadow);"
+	>
+		<Image src={still} alt={label} width={1200} style="display: block; width: 100%; height: auto;" />
+		<span
+			aria-hidden="true"
+			style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.25);"
+		>
+			<svg width="72" height="72" viewBox="0 0 72 72">
+				<circle cx="36" cy="36" r="36" fill="rgba(0, 0, 0, 0.6)" />
+				<path d="M29 22 L52 36 L29 50 Z" fill="#fff" />
+			</svg>
+		</span>
+	</a>
+);
+
+<div class="lang-block-nl">
+
+Gisteren ging [**Waar is Waarheid?**](https://www.erlnmyr.be/waar-is-waarheid/) in première in
+Theater Het Klokhuis in Antwerpen, en de regionale zender **ATV** was erbij. Ze maakten er een
+reportage over: *meespeeltheater als antwoord op fake news*. Tine Van den Broeck en ik vertellen
+waarom we kinderen samen met ons op zoek laten gaan naar het personage Waarheid, en hoe ze
+onderweg leren om niet te snel te oordelen.
+
+Bekijk de reportage op de website van ATV / Gazet van Antwerpen:
+
+<VideoLink label="Bekijk de ATV-reportage over Waar is Waarheid?" />
+
+Meer info over de voorstelling vind je op de
+[pagina van Waar is Waarheid? op ERLNMYR.be](https://www.erlnmyr.be/waar-is-waarheid/).
+
+</div>
+
+<div class="lang-block-en">
+
+Yesterday [**Waar is Waarheid?**](https://www.erlnmyr.be/waar-is-waarheid/) ("Where is Truth?")
+premiered at Theater Het Klokhuis in Antwerp, and regional broadcaster **ATV** was there. They made
+a news report about it: *interactive theatre as an answer to fake news*. Tine Van den Broeck and I
+explain why we invite children to search for the character Truth together with us, and how they
+learn along the way not to jump to conclusions.
+
+Watch the report (in Dutch) on the ATV / Gazet van Antwerpen website:
+
+<VideoLink label="Watch the ATV report on Waar is Waarheid?" />
+
+You'll find more about the show on the
+[Waar is Waarheid? page on ERLNMYR.be](https://www.erlnmyr.be/waar-is-waarheid/).
+
+</div>
